@@ -1,0 +1,28 @@
+*{
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    padding: 0px 10px;
+    background-image: url('../img/bg-body.png');
+}
+
+.navegador{
+    display: flex;
+    justify-content: space-around;
+}
+.nav{
+    border: solid;
+    border-color: black;
+}
+.logo{
+    display: flex;
+    justify-self: center;
+}
+.Recetas{
+    display: flex;
+    flex-wrap: wrap;
+}
+.pie{
+    display: flex;
+    
+}
