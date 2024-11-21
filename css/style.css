@@ -24,7 +24,8 @@
 }
 .pie{
     display: flex;
-    
+    justify-content: right;
+    font-size: smaller;
 }
 .invalid{
     background-color: blue;
