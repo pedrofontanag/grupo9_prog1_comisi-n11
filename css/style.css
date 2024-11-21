@@ -5,7 +5,9 @@
     padding: 0px 10px;
     background-image: url('../img/bg-body.png');
 }
-
+.head{
+    display: flex;
+}
 .navegador{
     display: flex;
     justify-content: space-around;
