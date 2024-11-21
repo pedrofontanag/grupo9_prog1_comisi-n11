@@ -29,3 +29,18 @@
 .invalid{
     background-color: blue;
 }
+
+@media (max-width: 600) {
+    header, footer {
+        text-align: center;
+    }
+
+    .navigation ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .receta-card {
+        width: 100%;
+    }
+}
