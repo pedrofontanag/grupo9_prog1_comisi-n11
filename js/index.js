@@ -24,18 +24,19 @@ fetch('https://dummyjson.com/recipes')
         return response.json()
   })
     .then(function(data) {
+        let conteiner = document.querySelector(".recetas-apis");
         for (let i = 0; i < 10; i++) {
             const element = data.recipes[i];
-            console.log(element);
             let nombre = element.name;
             let dificultad = element.difficulty; 
             let imagen = element.image;
-            document.querySelector(".name").innerHTML = nombre;
-            document.querySelector(".dif").innerText = dificultad;
-            document.querySelector(".img").innerHTML = imagen    
-        };
-       
-    })
+            conteiner.innerHTML += `<article class="carta">
+            <h2>${nombre}</h2>
+            <img src="${imagen}"></img>
+            <p>Dificultad: ${dificultad}</p>
+        </article>`;
+
+        }})
   
     .catch(function(error) {
         console.log("Error: " + error);
