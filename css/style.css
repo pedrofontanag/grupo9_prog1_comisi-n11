@@ -110,3 +110,14 @@
 .masRecetas{
     display: none;
 }
+.conteiner{
+    display: flex;
+    flex-wrap: wrap; 
+}
+.conteiner h2{
+    width: 100%;
+    text-align: center;
+}
+.categoria{
+    display: none;
+}
