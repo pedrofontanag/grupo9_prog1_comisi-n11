@@ -290,3 +290,12 @@ fetch('https://dummyjson.com/recipes')
     .catch(function(error) {
         console.log("Error: " + error);
   })
+
+  let sections = document.querySelectorAll(".conteiner");
+  for (let i = 0; i < sections.length; i++) {
+      sections[i].addEventListener("click", function () {
+          let category = sections[i].classList[1];
+          window.location.href = `./category.html?category=${category}`;
+      });
+  }
+  
