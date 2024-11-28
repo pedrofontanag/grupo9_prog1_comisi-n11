@@ -18,3 +18,29 @@ form.addEventListener("submit", function(e) {
         form.submit()
     }
 })
+
+fetch('https://dummyjson.com/recipes')
+    .then(function(response) {
+        return response.json()
+  })
+    .then(function(data) {
+        let conteiner = document.querySelector(".recetas-apis");
+        for (let i = 0; i < 10; i++) {
+            const element = data.recipes[i];
+            let nombre = element.name;
+            let dificultad = element.difficulty; 
+            let imagen = element.image;
+            conteiner.innerHTML += `<article class="carta">
+            <h2>${nombre}</h2>
+            <img src="${imagen}"></img>
+            <p>Dificultad: ${dificultad}</p>
+        </article>`;
+
+        }})
+  
+    .catch(function(error) {
+        console.log("Error: " + error);
+  })
+  
+
+
