@@ -31,22 +31,16 @@ fetch('https://dummyjson.com/recipes')
             let nombre = element.name;
             let dificultad = element.difficulty; 
             let imagen = element.image;
-            conteiner.innerHTML += `<article class="carta">
+            let id = element.id;
+            let cartaHTML= `<article class="carta">
             <h2>${nombre}</h2>
             <img src="${imagen}"></img>
             <p>Dificultad: ${dificultad}</p>
-            <button class="ver-mas" data-id="${id}">Ver más</button> 
+             <a href="receta.html?id=${id}" class="boton-detalle">Ir al detalle</a>
             </article>`;
+            conteiner.innerHTML += cartaHTML
+            
         }
-
-        let botones = document.querySelectorAll(".ver-mas");
-        botones.forEach(function(boton) {
-            boton.addEventListener("click", function() {
-                let recetaId = this.getAttribute("data-id");
-                window.location.href = `receta.html?id=${recetaId}`;
-            });
-        });
-
         let contenedor = document.querySelector(".masRecetas")
         for (let i = 10; i < 20; i++) {
             const element = data.recipes[i];
@@ -58,7 +52,7 @@ fetch('https://dummyjson.com/recipes')
             <h2>${nombre}</h2>
             <img src="${imagen}"></img>
             <p>Dificultad: ${dificultad}</p>
-            <button class="ver-mas" data-id="${id}">Ver más</button>
+            
             </article>`;
             
         }})
@@ -68,14 +62,7 @@ fetch('https://dummyjson.com/recipes')
         console.log("Error: " + error);
   })
 
-  let botonesVerMas = document.querySelectorAll(".ver-mas");
 
-botonesVerMas.forEach(function(boton) {
-    boton.addEventListener("click", function() {
-        const recetaId = boton.getAttribute("data-id");
-        window.location.href = `receta.html?id=${recetaId}`;
-    });
-});
 
 let boton = document.querySelector(".boton-cargar-mas")
 let contenedor = document.querySelector(".masRecetas")
@@ -83,4 +70,8 @@ boton.addEventListener('click',function() {
     contenedor.style.display = 'flex'
     boton.style.display = 'none'
 });
+
+let boton_detalle = document.querySelector("detalle")
+console.log(boton_detalle);
+
 
