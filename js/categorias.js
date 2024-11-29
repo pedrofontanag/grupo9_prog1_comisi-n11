@@ -294,8 +294,19 @@ fetch('https://dummyjson.com/recipes')
   let sections = document.querySelectorAll(".conteiner");
   for (let i = 0; i < sections.length; i++) {
       sections[i].addEventListener("click", function () {
-          let category = sections[i].classList[1];
-          window.location.href = `./category.html?category=${category}`;
+          let category = sections[i].getAttribute("data-category");
+          window.location.href = `./receta.html?category=${category}`;
       });
   }
   
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();  
+    
+    let category = input.value.trim(); 
+    if (category !== "") {  
+        window.location.href = `./categorias.html?category=${category}`;
+    } else {
+        invalid.style.display = "block";  
+        invalid.innerText = "El campo está vacío";
+    }
+});
