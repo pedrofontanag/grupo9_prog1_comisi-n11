@@ -24,7 +24,6 @@ fetch('https://dummyjson.com/recipes')
         return response.json()
   })
     .then(function(data){
-        console.log(data);
         let italian = []
         let asian = []
         let american = []
@@ -99,7 +98,7 @@ fetch('https://dummyjson.com/recipes')
             let nombre = element.name;
             let dificultad = element.difficulty; 
             let imagen = element.image;
-            conteiner_italian.innerHTML += `<article class="carta  categoria">
+            conteiner_italian.innerHTML += `<article class="carta  categoria-italia" style="display: none;">
             <h2>${nombre}</h2>
             <img src="${imagen}"></img>
             <p>Dificultad: ${dificultad}</p>
@@ -111,7 +110,7 @@ fetch('https://dummyjson.com/recipes')
             let nombre = element.name;
             let dificultad = element.difficulty; 
             let imagen = element.image;
-            conteiner_asian.innerHTML += `<article class="carta categoria">
+            conteiner_asian.innerHTML += `<article class="carta categoria"  style="display: none;">
             <h2>${nombre}</h2>
             <img src="${imagen}"></img>
             <p>Dificultad: ${dificultad}</p>
@@ -123,7 +122,7 @@ fetch('https://dummyjson.com/recipes')
             let nombre = element.name;
             let dificultad = element.difficulty; 
             let imagen = element.image;
-            conteiner_american.innerHTML += `<article class="carta categoria">
+            conteiner_american.innerHTML += `<article class="carta categoria"  style="display: none;">
             <h2>${nombre}</h2>
             <img src="${imagen}"></img>
             <p>Dificultad: ${dificultad}</p>
@@ -135,7 +134,7 @@ fetch('https://dummyjson.com/recipes')
             let nombre = element.name;
             let dificultad = element.difficulty; 
             let imagen = element.image;
-            conteiner_mexican.innerHTML += `<article class="carta categoria">
+            conteiner_mexican.innerHTML += `<article class="carta categoria"  style="display: none;">
             <h2>${nombre}</h2>
             <img src="${imagen}"></img>
             <p>Dificultad: ${dificultad}</p>
@@ -147,7 +146,7 @@ fetch('https://dummyjson.com/recipes')
             let nombre = element.name;
             let dificultad = element.difficulty; 
             let imagen = element.image;
-            conteiner_mediterranean.innerHTML += `<article class="carta categoria">
+            conteiner_mediterranean.innerHTML += `<article class="carta categoria"  style="display: none;">
             <h2>${nombre}</h2>
             <img src="${imagen}"></img>
             <p>Dificultad: ${dificultad}</p>
@@ -159,7 +158,7 @@ fetch('https://dummyjson.com/recipes')
             let nombre = element.name;
             let dificultad = element.difficulty; 
             let imagen = element.image;
-            conteiner_pakistani.innerHTML += `<article class="carta categoria">
+            conteiner_pakistani.innerHTML += `<article class="carta categoria"  style="display: none;">
             <h2>${nombre}</h2>
             <img src="${imagen}"></img>
             <p>Dificultad: ${dificultad}</p>
@@ -171,7 +170,7 @@ fetch('https://dummyjson.com/recipes')
             let nombre = element.name;
             let dificultad = element.difficulty; 
             let imagen = element.image;
-            conteiner_japanese.innerHTML += `<article class="carta categoria">
+            conteiner_japanese.innerHTML += `<article class="carta categoria"  style="display: none;">
             <h2>${nombre}</h2>
             <img src="${imagen}"></img>
             <p>Dificultad: ${dificultad}</p>
@@ -183,7 +182,7 @@ fetch('https://dummyjson.com/recipes')
             let nombre = element.name;
             let dificultad = element.difficulty; 
             let imagen = element.image;
-            conteiner_moroccan.innerHTML += `<article class="carta categoria">
+            conteiner_moroccan.innerHTML += `<article class="carta categoria"  style="display: none;">
             <h2>${nombre}</h2>
             <img src="${imagen}"></img>
             <p>Dificultad: ${dificultad}</p>
@@ -195,7 +194,7 @@ fetch('https://dummyjson.com/recipes')
             let nombre = element.name;
             let dificultad = element.difficulty; 
             let imagen = element.image;
-            conteiner_korean.innerHTML += `<article class="carta categoria">
+            conteiner_korean.innerHTML += `<article class="carta categoria"  style="display: none;">
             <h2>${nombre}</h2>
             <img src="${imagen}"></img>
             <p>Dificultad: ${dificultad}</p>
@@ -207,7 +206,7 @@ fetch('https://dummyjson.com/recipes')
             let nombre = element.name;
             let dificultad = element.difficulty; 
             let imagen = element.image;
-            conteiner_greek.innerHTML += `<article class="carta categoria">
+            conteiner_greek.innerHTML += `<article class="carta categoria"  style="display: none;">
             <h2>${nombre}</h2>
             <img src="${imagen}"></img>
             <p>Dificultad: ${dificultad}</p>
@@ -219,7 +218,7 @@ fetch('https://dummyjson.com/recipes')
             let nombre = element.name;
             let dificultad = element.difficulty; 
             let imagen = element.image;
-            conteiner_thai.innerHTML += `<article class="carta categoria">
+            conteiner_thai.innerHTML += `<article class="carta categoria"  style="display: none;">
             <h2>${nombre}</h2>
             <img src="${imagen}"></img>
             <p>Dificultad: ${dificultad}</p>
@@ -231,7 +230,7 @@ fetch('https://dummyjson.com/recipes')
             let nombre = element.name;
             let dificultad = element.difficulty; 
             let imagen = element.image;
-            conteiner_turkish.innerHTML += `<article class="carta categoria">
+            conteiner_turkish.innerHTML += `<article class="carta categoria"  style="display: none;">
             <h2>${nombre}</h2>
             <img src="${imagen}"></img>
             <p>Dificultad: ${dificultad}</p>
@@ -243,7 +242,7 @@ fetch('https://dummyjson.com/recipes')
             let nombre = element.name;
             let dificultad = element.difficulty; 
             let imagen = element.image;
-            conteiner_russian.innerHTML += `<article class="carta categoria ">
+            conteiner_russian.innerHTML += `<article class="carta categoria "  style="display: none;">
             <h2>${nombre}</h2>
             <img src="${imagen}"></img>
             <p>Dificultad: ${dificultad}</p>
@@ -255,7 +254,7 @@ fetch('https://dummyjson.com/recipes')
             let nombre = element.name;
             let dificultad = element.difficulty; 
             let imagen = element.image;
-            conteiner_indian.innerHTML += `<article class="carta categoria">
+            conteiner_indian.innerHTML += `<article class="carta categoria"  style="display: none;">
             <h2>${nombre}</h2>
             <img src="${imagen}"></img>
             <p>Dificultad: ${dificultad}</p>
@@ -267,7 +266,7 @@ fetch('https://dummyjson.com/recipes')
             let nombre = element.name;
             let dificultad = element.difficulty; 
             let imagen = element.image;
-            conteiner_lebanese.innerHTML += `<article class="carta categoria">
+            conteiner_lebanese.innerHTML += `<article class="carta categoria"  style="display: none;">
             <h2>${nombre}</h2>
             <img src="${imagen}"></img>
             <p>Dificultad: ${dificultad}</p>
@@ -279,7 +278,7 @@ fetch('https://dummyjson.com/recipes')
             let nombre = element.name;
             let dificultad = element.difficulty; 
             let imagen = element.image;
-            conteiner_brazilian.innerHTML += `<article class="carta categoria">
+            conteiner_brazilian.innerHTML += `<article class="carta categoria"  style="display: none;">
             <h2>${nombre}</h2>
             <img src="${imagen}"></img>
             <p>Dificultad: ${dificultad}</p>
@@ -290,3 +289,27 @@ fetch('https://dummyjson.com/recipes')
     .catch(function(error) {
         console.log("Error: " + error);
   })
+
+  //let sections = document.querySelectorAll(".conteiner");
+  //for (let i = 0; i < sections.length; i++) {
+   // console.log(sections[i].classList[1]);
+   // console.log(sections[i]);
+    
+   //   sections[i].addEventListener("click", function () {
+    //      let category = sections[i].classList[1];
+    //      window.location.href = `./category.html?category=${category}`;
+    //  });
+ // }
+
+ let nombre = document.querySelector(".nombreCat");
+ let categoria = document.querySelector(".categoria-italia")
+ console.log(nombre, categoria);
+ 
+ 
+ nombre.addEventListener("click",function (){
+    if (categoria.style.display == "none"){
+        categoria.style.display = "flex"
+    }
+
+ });
+  
