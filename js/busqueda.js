@@ -23,4 +23,34 @@ let queryString = location.search;
 let queryStringObj = new URLSearchParams(queryString);
 let idbusqueda = queryStringObj.get('id');
 
+let contenedorBusqueda = document.querySelector(".buscador")
+contenedorTitulo.innerText = idcategoria
+fetch(`https://dummyjson.com/recipes/tag/${idcategoria}`)
+    .then(function(response) {
+        return response.json()
+  })
+
+    .then(function(data) {
+        let conteiner = document.querySelector(".detalleCat");
+        console.log(data);
+        
+        for (let i = 0; i < data.recipes.length; i++) {
+            const element = data.recipes[i];
+            console.log(element);
+            let nombre = element.name;
+            let dificultad = element.difficulty; 
+            let imagen = element.image;
+            let id = element.id;
+            let cartaHTML= `<article class="carta">
+            <h2>${nombre}</h2>
+            <img src="${imagen}"></img>
+            <p>Dificultad: ${dificultad}</p>
+             <a href="receta.html?id=${id}" class="boton-detalle">Ir al detalle</a>
+            </article>`;
+            conteiner.innerHTML += cartaHTML
+            
+        }})
+        .catch(function(error) {
+            console.log("Error: " + error);
+      })
 
