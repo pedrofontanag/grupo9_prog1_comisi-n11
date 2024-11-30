@@ -130,3 +130,9 @@
     display: flex;
     flex-wrap: wrap;
 }
+.instrucciones{
+    font-size: medium;
+}
+.foto{
+    justify-self: center;
+}

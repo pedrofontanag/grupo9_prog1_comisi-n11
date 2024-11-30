@@ -25,31 +25,34 @@ let idbusqueda = queryStringObj.get('id');
 
 let contenedorBusqueda = document.querySelector(".buscador")
 contenedorTitulo.innerText = idcategoria
-fetch(`https://dummyjson.com/recipes/tag/${idcategoria}`)
+let valida = true
+fetch('https://dummyjson.com/recipes')
     .then(function(response) {
         return response.json()
   })
 
     .then(function(data) {
-        let conteiner = document.querySelector(".detalleCat");
-        console.log(data);
-        
+        let conteiner = document.querySelector(".buscador");
         for (let i = 0; i < data.recipes.length; i++) {
             const element = data.recipes[i];
-            console.log(element);
-            let nombre = element.name;
-            let dificultad = element.difficulty; 
-            let imagen = element.image;
-            let id = element.id;
-            let cartaHTML= `<article class="carta">
-            <h2>${nombre}</h2>
-            <img src="${imagen}"></img>
-            <p>Dificultad: ${dificultad}</p>
-             <a href="receta.html?id=${id}" class="boton-detalle">Ir al detalle</a>
-            </article>`;
-            conteiner.innerHTML += cartaHTML
-            
-        }})
+            if(contenedorBusqueda == element.tag){
+                let nombre = element.name;
+                let dificultad = element.difficulty; 
+                let imagen = element.image;
+                let id = element.id;
+                let cartaHTML= `<article class="carta">
+                <h2>${nombre}</h2>
+                <img src="${imagen}"></img>
+                <p>Dificultad: ${dificultad}</p>
+                <a href="receta.html?id=${id}" class="boton-detalle">Ir al detalle</a>
+                </article>`;
+                conteiner.innerHTML += cartaHTML
+                
+        }
+            else{
+                alert("palabra buscada no tiene referencia")
+            }
+    }})
         .catch(function(error) {
             console.log("Error: " + error);
       })
