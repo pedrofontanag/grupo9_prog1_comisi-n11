@@ -30,6 +30,7 @@ fetch('https://dummyjson.com/recipes')
         let conteiner = document.querySelector(".recetas-apis");
         for (let i = 0; i < 10; i++) {
             const element = data.recipes[i];
+            console.log(element);
             let nombre = element.name;
             let dificultad = element.difficulty; 
             let imagen = element.image;
@@ -49,14 +50,14 @@ fetch('https://dummyjson.com/recipes')
             let nombre = element.name;
             let dificultad = element.difficulty; 
             let imagen = element.image;
-
-            contenedor.innerHTML += `<article class="carta">
+            let id = element.id;
+            let cartaHTML= `<article class="carta">
             <h2>${nombre}</h2>
             <img src="${imagen}"></img>
             <p>Dificultad: ${dificultad}</p>
-            
+             <a href="receta.html?id=${id}" class="boton-detalle">Ir al detalle</a>
             </article>`;
-            
+            contenedor.innerHTML += cartaHTML
         }})
 
   

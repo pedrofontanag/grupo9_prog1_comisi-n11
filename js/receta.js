@@ -1,24 +1,28 @@
-let urlParams = new URLSearchParams(window.location.search);
-let idReceta = urlParams.get("id");  // Captura el parámetro `id` de la query string
 
-if (idReceta) {
-    // Realizar el fetch para obtener los detalles de la receta
-    fetch(`https://dummyjson.com/recipes/${idReceta}`)
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(data) {
-            // Mostrar los detalles de la receta
-            document.getElementById("nombre-receta").innerText = data.name;
-            document.getElementById("imagen-receta").src = data.image;
-            document.getElementById("dificultad-receta").innerText = `Dificultad: ${data.difficulty}`;
-            document.getElementById("descripcion-receta").innerText = data.description || "Descripción no disponible.";
+let queryString = location.search;
+let queryStringObj = new URLSearchParams(queryString);
+let idreceta = queryStringObj.get('id');
 
-            // Puedes agregar más detalles según lo que la API devuelva (ingredientes, instrucciones, etc.)
-        })
-        .catch(function(error) {
-            console.log("Error: " + error);
-        });
-} else {
-    console.log("No se proporcionó un id de receta.");
-}
+console.log(idreceta);
+
+fetch(`https://dummyjson.com/recipes/${idreceta}`)
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        let conteiner = document.querySelector(".detalle-receta")
+        console.log(data);
+        let nombre = data.name 
+        let foto = data.image
+        let instrucciones = data.instructions
+        let tiempo = data.prepTimeMinutes
+        conteiner.innerHTML = `<h1 class='titulo'>${nombre}</h1>
+        <img class='foto' src="${foto}"></img>
+        <p class='instrucciones'>${instrucciones}</p>
+        <p class='tiempo'>Minutos: ${tiempo}</p>`
+    })
+    .catch(function(error) {
+        console.log('El error es: '+ error);
+        
+        
+    })

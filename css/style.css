@@ -118,3 +118,12 @@
     width: 100%;
     text-align: center;
 }
+.categorias{
+    display: flex;
+    flex-wrap: wrap;
+}
+.categorias-cartas{
+    display: flex;
+    flex-wrap: wrap;
+}
+
