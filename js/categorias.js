@@ -32,6 +32,8 @@ fetch('https://dummyjson.com/recipes/tags')
             let id = element
             contenedor.innerHTML += `
             <a href="detallecategorias.html?id=${id}" class="boton-detalle">${element}</a>`
+            console.log(id);
+            
         }})
     .catch(function(error) {
         console.log('El error es: '+ error);
